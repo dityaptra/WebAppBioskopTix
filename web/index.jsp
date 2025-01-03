@@ -13,13 +13,7 @@
         <link rel="stylesheet" href="css/index.css">
     </head>
     <body>
-        <%
-            String login_mag=(String)request.getAttribute("login_mag");
-            if(login_mag!=null){
-                out.println(login_mag);
-            }
-        %>
-        <<form action="login.jsp" method="post">
+        <<form action="LoginServlet" method="post">
             <div id="menu"><center><h1>BIOSKOPTIX</h1></center></div>
             <table align="center">
                 <tr>

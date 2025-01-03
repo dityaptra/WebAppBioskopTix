@@ -4,8 +4,8 @@
     Author     : gdrad
 --%>
 
-<%@page import="App.User"%>
-<%@page import="App.Config"%>
+<%@page import="model.User"%>
+<%@page import="model.Config"%>
 <%@page import="java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

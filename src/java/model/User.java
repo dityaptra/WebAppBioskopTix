@@ -1,4 +1,4 @@
-package App;
+package model;
 
 public class User {
     private int id_pelanggan;
