@@ -1,7 +1,7 @@
 package controller;
 
 import model.User;
-import model.Login;
+import model.UserDAO;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -36,7 +36,7 @@ public class LoginServlet extends HttpServlet {
         obj.setUsername(username);
         obj.setPassword(password);
 
-        User user = Login.validate(obj);
+        User user = UserDAO.validate(obj);
 
         if (user != null) {
             // Simpan data pengguna di session
@@ -50,7 +50,7 @@ public class LoginServlet extends HttpServlet {
             // Redirect ke halaman beranda
             response.sendRedirect("beranda.jsp");
         } else {
-            // Login gagal, kembali ke halaman login dengan pesan error
+            // UserDAO gagal, kembali ke halaman login dengan pesan error
             request.setAttribute("errorMessage", "Username atau Password salah!");
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }

@@ -4,8 +4,10 @@
  */
 package model;
 import java.sql.*;
+import model.Config;
+import model.User;
 
-public class Login {
+public class UserDAO {
 
     /**
      *
