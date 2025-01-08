@@ -14,6 +14,15 @@
         <url-pattern>/LoginServlet</url-pattern>
     </servlet-mapping>
     
+      <servlet>
+        <servlet-name>BerandaServlet</servlet-name>
+        <servlet-class>controller.BerandaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BerandaServlet</servlet-name>
+        <url-pattern>/BerandaServlet</url-pattern>
+    </servlet-mapping>
+    
     <servlet>
         <servlet-name>TiketServlet</servlet-name>
         <servlet-class>controller.TiketServlet</servlet-class>
