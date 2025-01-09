@@ -11,6 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Pesan Tiket Film</title>
         <link rel="stylesheet" href="css/pesantiket.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="js/pesantiket.js"></script>
     </head>
     <body>
@@ -237,8 +238,8 @@
                                     <form action="TicketServlet" method="POST" style="display:inline;">
                                         <input type="hidden" name="action" value="delete">
                                         <input type="hidden" name="id_tiket" value="<%= rs.getString("id_tiket")%>">
-                                        <button type="submit" class="btn-delete" 
-                                                onclick="return confirm('Apakah Anda yakin ingin menghapus tiket ini?')">
+                                        <button type="button" class="btn-delete" 
+                                                onclick="confirmDelete('<%= rs.getString("id_tiket")%>')">
                                             Hapus
                                         </button>
                                     </form>
@@ -255,5 +256,25 @@
                 </div>
             </section>
         </div>
+        <%
+            String alertMessage = (String) session.getAttribute("alertMessage");
+            String alertType = (String) session.getAttribute("alertType");
+
+            if (alertMessage != null) {
+        %>
+        <script>
+            Swal.fire({
+                icon: '<%= alertType%>',
+                title: '<%= alertType.equals("success") ? "Berhasil!" : "Oops..."%>',
+                text: '<%= alertMessage%>',
+                timer: 2000,
+                showConfirmButton: false
+            });
+        </script>
+        <%
+                session.removeAttribute("alertMessage");
+                session.removeAttribute("alertType");
+            }
+        %>
     </body>
 </html>
