@@ -212,6 +212,7 @@
                     <thead>
                         <tr>
                             <th>ID Tiket</th>
+                            <th>ID Pelanggan</th>
                             <th>Nama Pelanggan</th>
                             <th>Judul Film</th>
                             <th>Jadwal</th>
@@ -233,6 +234,7 @@
                         %>
                             <tr>
                                 <td><%= rs.getString("id_tiket") %></td>
+                                <td><%= rs.getString("id_pelanggan") %></td>
                                 <td><%= rs.getString("nama") %></td>
                                 <td><%= rs.getString("judul_film") %></td>
                                 <td><%= rs.getString("jadwal_tayang") %></td>
