@@ -69,21 +69,19 @@ function toggleSeat(seatId) {
             seatArray.length > 0 ? 'Kursi dipilih: ' + seatArray.join(', ') : 'Belum memilih kursi';
 }
 
-function increase() {
-    var input = document.getElementById('jumlah');
-    var value = parseInt(input.value);
-    if (value < 8) {
-        input.value = value + 1;
-        hitungTotal();
+function decrease() {
+    const jumlah = document.getElementById('jumlah');
+    if (jumlah.value > 1) {
+        jumlah.value = parseInt(jumlah.value) - 1;
+        updateTotal();
     }
 }
 
-function decrease() {
-    var input = document.getElementById('jumlah');
-    var value = parseInt(input.value);
-    if (value > 1) {
-        input.value = value - 1;
-        hitungTotal();
+function increase() {
+    const jumlah = document.getElementById('jumlah');
+    if (parseInt(jumlah.value || 0) < 8) {
+        jumlah.value = parseInt(jumlah.value || 0) + 1;
+        updateTotal();
     }
 }
 
